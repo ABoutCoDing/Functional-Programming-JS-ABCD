@@ -1,4 +1,6 @@
 
+const _ = require('lodash');
+
 // // 29
 // var array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 // for(let i=0; i<array.length; i++) {
@@ -73,3 +75,10 @@
 //     }
 // }
 // var average = totalGrades / totalStudentsFound; //-> 90
+
+
+// _.chain(enrollment)
+//    .filter(student => student.enrolled > 1)
+//    .map('grade')
+//    .mean()
+//    .value();
