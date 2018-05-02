@@ -244,11 +244,6 @@ countWords(str); //-> 19
 
 
 // 144
-f g = f(g) = compose :: ((B -> C), (A -> B)) -> (A -> C)
-
-
-
-// 144
 function compose(/* 함수 */) {
     let args = arguments;
     let start = args.length - 1;
@@ -296,7 +291,7 @@ smartestStudent(students, grades);
 
 
 
-// 146
+// 147
 const first = R.head;
 const getName = R.pluck(0);
 const reverse = R.reverse;
@@ -307,11 +302,7 @@ R.compose(first, getName, sortByGrade, combine);
 
 
 
-// 148
-const showStudent = compose(append, csv, findStudent);
-
 // 149
-
 const find = R.curry((db, id) => db.find(id));
 // findObject :: DB -> String -> Object
 const findObject = R.curry(function (db, id) {
