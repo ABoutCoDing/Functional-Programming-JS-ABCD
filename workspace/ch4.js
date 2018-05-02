@@ -18,6 +18,8 @@ let result = _.chain(names)
     .sort()
     .value();
 
+
+
 // 125
 // trim :: String -> String
 const trim = (str) => str.replace(/^\s*|\s*$/g, '');
@@ -62,15 +64,15 @@ const normalize = (str) => str.replace(/\-/g, '')
 // isValid :: String -> Status
 const isValid = function (str) {
     if (str.length === 0) {
-        return new status(false, '잘못된 입력입니다. 빈 값일 리 없지요!');
+        return new Status(false, '잘못된 입력입니다. 빈 값일 리 없지요!');
     } else {
-        return new status(true, '성공');
+        return new Status(true, '성공');
     }
 }
 
 isValid(normalize(trim('444-44-4444')));   //-> (true, '성공!')
 
-
+// 128
 const StringPair = Tuple(String, String);
 const name = new StringPair('Barkley', 'Rosser');
 
