@@ -34,27 +34,27 @@ class IO {
   }
 }
 
-// Helper functions
-const read = function (document, id) {
-  return function () {
-    return document.querySelector(`${id}`).innerHTML;
-  };
-};
+// // Helper functions
+// const read = function (document, id) {
+//   return function () {
+//     return document.querySelector(`${id}`).innerHTML;
+//   };
+// };
 
-const write = function(document, id) {
-  return function(val) {
-    return document.querySelector(`${id}`).innerHTML = val;
-  };
-};
+// const write = function(document, id) {
+//   return function(val) {
+//     return document.querySelector(`${id}`).innerHTML = val;
+//   };
+// };
 
-const readDom = _.partial(read, document);
-const writeDom = _.partial(write, document);
+// const readDom = _.partial(read, document);
+// const writeDom = _.partial(write, document);
 
-// Run program
-const changeToStartCase =
-  IO.from(readDom('#student-name')).
-    map(_.startCase).
-    map(writeDom('#student-name'));
+// // Run program
+// const changeToStartCase =
+//   IO.from(readDom('#student-name')).
+//     map(_.startCase).
+//     map(writeDom('#student-name'));
 
-changeToStartCase.run(); // this will start case the content within the DOM element
+// changeToStartCase.run(); // this will start case the content within the DOM element
 

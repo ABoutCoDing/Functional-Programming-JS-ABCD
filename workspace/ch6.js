@@ -174,8 +174,8 @@ QUnit.test('showStudent: cleanInput', function(assert) {
     const assertions = ['', '4444', '44444', '4', '44'];
 
     expect(input.length);
-    input.forEach(function (Val, key) {
-        assert.equal(cleanInput(val), assertion[key]);
+    input.forEach(function (val, key) {
+        assert.equal(cleanInput(val), assertions[key]);
     });
 });
 
@@ -186,7 +186,7 @@ QUnit.test('showStudent: checkLengthSsn', function(assert) {
     assert.equal(checkLengthSsn('444444444').chain(R.length), 9);
 });
 
-QUnit.test('showStudent: CSV', function(asssert) {
+QUnit.test('showStudent: CSV', function(assert) {
     assert.equal(csv(['']), '');
     assert.equal(csv(['Alonzo']), 'Alonzo');
     assert.equal(csv(['Alonzo', 'Church']), 'Alonzo,Church');
@@ -259,15 +259,6 @@ JSC.test(
         return '평균 ' + grades + ' 학점에 관한 테스트: '  + grades;
     }
 );
-
-// 221
-평균 학점 계산: 100 classifications, 100 cases tested, 100 pass
-
-평균 A 학점에 관한 테스트:
-    90.042,92.828,99.359.90,175.95,569,97.101,92.24 pass 1
-평균 A 학점에 관한 테스트:
-    90.084,93.199, pass 1
-...
 
 
 // 223

@@ -60,40 +60,4 @@ JSC.SSN = function (param1, param2, param3) {
 	};
 };
 
-QUnit.test('JSCheck Custom Specifier for SSN', function (assert) {
 
-	// Functions to test
-	const validLength = (len, str) => str.length === len;
-
-	const find = R.curry((db, id) => db.find(id));
-	
-	const checkLengthSsn = ssn => {		
-		return Either.of(ssn)
-			.filter(R.partial(validLength, [9]));
-	};
-
-	JSC.clear();
-	
-	JSC.on_report((report) => console.log('Report'+ str));
-	
-	JSC.on_pass((object) => assert.ok(object.pass));
-	
-	JSC.on_fail((object) =>
-		assert.ok(object.pass || object.args.length === 9, 'Test failed for: ' + object.args));
-
-	JSC.test(
-		'Check Length SSN',
-		function (verdict, ssn) {
-			return verdict(checkLengthSsn(ssn));
-		},
-		[
-			JSC.SSN(JSC.integer(100, 999), JSC.integer(10, 99),
-			JSC.integer(1000,9999))
-		],
-		function (ssn) {
-			return 'Testing Custom SSN: ' + ssn;
-		}
-	);
-
-	expect(0); 
-});
